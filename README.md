@@ -1,66 +1,36 @@
-tasks = []
+To-Do List App
+Description
+This is a simple To-Do List App written in Python. It allows users to add, remove, and mark tasks as completed. The app also provides options to display all tasks or only incomplete tasks.
 
-def add_task():
-    task = input("Enter a new task: ")
-    tasks.append(task)
-    print("Task added successfully!")
+Features
+Add new tasks
+Remove existing tasks
+Mark tasks as completed
+Display all tasks
+Display only incomplete tasks
+How to Use
+Run the todo_list_app.py file in your terminal or command prompt.
+Follow the prompts to add, remove, or mark tasks as completed.
+Use the menu options to display all tasks or only incomplete tasks.
+Code Structure
+The code is organized into the following functions:
 
-def remove_task():
-    while True:
-        try:
-            task_number = int(input("Enter the task number to remove: "))
-            if task_number > 0 and task_number <= len(tasks):
-                tasks.pop(task_number - 1)
-                print("Task removed successfully!")
-                break
-            else:
-                print("Invalid task number! Please try again.")
-        except ValueError:
-            print("Invalid input! Please enter a number.")
+add_task(): adds a new task to the list
+remove_task(): removes a task from the list
+mark_task_as_completed(): marks a task as completed
+display_all_tasks(): displays all tasks in the list
+display_incomplete_tasks(): displays only incomplete tasks in the list
+Error Handling
+The code includes try/except blocks to handle invalid input, such as non-numeric characters, when removing or marking tasks as completed.
 
-def mark_task_as_completed():
-    while True:
-        try:
-            task_number = int(input("Enter the task number to mark as completed: "))
-            if task_number > 0 and task_number <= len(tasks):
-                tasks[task_number - 1] += " (Completed)"
-                print("Task marked as completed!")
-                break
-            else:
-                print("Invalid task number! Please try again.")
-        except ValueError:
-            print("Invalid input! Please enter a number.")
+License
+This project is licensed under the MIT License. See LICENSE for details.
 
-def display_all_tasks():
-    for i, task in enumerate(tasks, start=1):
-        print(f"Task {i}: {task}")
+Contributing
+Contributions are welcome! If you'd like to add new features or fix bugs, please submit a pull request.
 
-def display_incomplete_tasks():
-    for i, task in enumerate(tasks, start=1):
-        if "(Completed)" not in task:
-            print(f"Task {i}: {task}")
+Author
+Sai Abhiram
 
-while True:
-    print("Welcome to the To-Do List App!")
-    print("What would you like to do?")
-    print("1. Add a new task")
-    print("2. Remove a task")
-    print("3. Mark a task as completed")
-    print("4. Display all tasks")
-    print("5. Display only incomplete tasks")
-    print("6. Quit")
-    choice = input("Enter your choice: ")
-    if choice == "1":
-        add_task()
-    elif choice == "2":
-        remove_task()
-    elif choice == "3":
-        mark_task_as_completed()
-    elif choice == "4":
-        display_all_tasks()
-    elif choice == "5":
-        display_incomplete_tasks()
-    elif choice == "6":
-        break
-    else:
-        print("Invalid choice!")
+Version
+1.0.0
